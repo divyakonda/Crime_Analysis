@@ -29,6 +29,7 @@ filename = raw_input("Please Enter Path of .json file with filename: ")
 # Read Crime count data from crime_count.json file 
 Data = pd.read_json(filename)
 
+# LSOA Names
 LSOA_Names = list(Data)
 
 from datetime import datetime, timedelta
