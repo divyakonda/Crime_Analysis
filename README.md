@@ -16,10 +16,26 @@ or
 Install Anaconda with python 2.7
 
 
-How to run the project
+How to run 'Crime_Correlation.py'
 
 1. Download json file from repository
 2. Run the python script
 3. It asks to input json file path with filename
-4. All the correlation patterns with there ranks are saved in CSV files
-5. CSV files will be saved in the path where python script is running
+4. All ouput files will be saved in the path where python script is running
+        Correlation.csv: All possible correlation patterns for each LSAO name and combination of crime types
+        Correlation_Rank.csv: Rank correlation patterns for each LSAO name and combination of crime types
+        Correlation_Rank_Map.txt: Correlation text file as a input to the HTML page
+        
+How to run 'crime.HTML'
+
+1. Choose 'Correlation_Rank_Map.txt' files as input to correlation option
+2. Choose 'policeGeoJSON.js' as input to Lat/Long option
+3. After loading above files, drag down options for choosing LSOA Name, Crime Type and time shift (lag) will be appear
+4. By default you can have all the crime types for any LSOA Name and lag value
+5. Then click 'Generate Heatmap'
+5. Also have options to 
+        Toggle Heatmap
+        Change gradient
+        Change radius
+        Change opacity
+       
