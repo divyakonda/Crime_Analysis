@@ -83,9 +83,11 @@ with open("Correlation_Rank_Map.txt", "w") as text_file:
 # To divide the array in each cell to individual value by adding'Time_Shift' column
 Correlation = explode(Correlation, LSOA_Names, fill_value='')
 Correlation['Time_Shift'] =  (range(len(Dates)) * len(Correlation))[0:len(Correlation)]
-
 Correlation.to_csv('Correlation.csv')
 
+Correlation_Rank = explode(Correlation_Rank, LSOA_Names, fill_value='')
+Correlation_Rank['Time_Shift'] =  (range(len(Dates)) * len(Correlation_Rank))[0:len(Correlation_Rank)]
+Correlation_Rank.to_csv('Correlation_Rank.csv')
 # Getting highly correlated patterns
 Correlation_sort = pd.melt(Correlation, id_vars=['Crime type 1','Crime type 2','Time_Shift'], value_vars=LSOA_Names,var_name='LSOA Name', value_name='correlation').sort_values('correlation',ascending=False)
 High_Correlation = Correlation_sort[Correlation_sort['correlation']>0]
